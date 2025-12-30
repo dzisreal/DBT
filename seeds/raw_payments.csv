@@ -1,0 +1,9 @@
+id,order_id,payment_method,amount_cents,payment_date
+1,2,credit_card,12500,2023-02-02
+2,3,bank_transfer,9900,2023-02-05
+3,4,credit_card,4500,2023-02-10
+4,7,credit_card,15000,2023-02-13
+5,8,cash,2200,2023-02-15
+6,10,credit_card,5300,2023-02-18
+7,11,bank_transfer,7600,2023-02-19
+8,12,credit_card,3400,2023-02-20

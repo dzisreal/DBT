@@ -1,0 +1,35 @@
+# Ten project dbt (namespace cho models/macros)
+name: dbt_sample
+# Phien ban project (mo ta)
+version: '1.0'
+# Phien ban schema config dbt
+config-version: 2
+
+# Ten profile trong profiles.yml
+profile: dbt_sample
+
+# Thu muc cho tung loai tai nguyen
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+snapshot-paths: ["snapshots"]
+
+# Thu muc se bi xoa khi dbt clean (dbt_packages duoc tao sau khi chay dbt deps de tai cac package, macros ben ngoai vao trong project)
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Cau hinh materialization theo folder model
+models:
+  dbt_sample:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
+
+# Cau hinh cho seeds (quote_columns: true se them "" vao ten cot khi load seed, dung cho cac cot co keyword/ky tu dac biet nhu type, timestamp, space, v.v.)
+seeds:
+  dbt_sample:
+    +quote_columns: false
