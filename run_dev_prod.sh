@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-export DBT_PROFILES_DIR=/home/dbt/dbt_sample
-cd /home/dbt/dbt_sample
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+export DBT_PROFILES_DIR="$script_dir"
+cd "$script_dir"
 
 #set password cua connections output trong .env
 if [ -f .env ]; then

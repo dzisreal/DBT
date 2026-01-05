@@ -2,20 +2,18 @@ dbt_sample:
   target: dev
   outputs:
     dev:
-      type: postgres
+      type: clickhouse
       host: localhost
-      port: 5432
-      user: postgres
-      pass: "{{ env_var('POSTGRES_PASSWORD') }}"
-      dbname: postgres
-      schema: dev
+      port: 8123
+      user: default
+      password: default
+      schema: default
       threads: 4
     prod:
-      type: postgres
+      type: clickhouse
       host: localhost
-      port: 5432
-      user: postgres
-      pass: "{{ env_var('POSTGRES_PASSWORD') }}"
-      dbname: postgres
-      schema: prod
+      port: 8123
+      user: default
+      password: default
+      schema: default
       threads: 4
