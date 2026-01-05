@@ -23,6 +23,18 @@ docker run -d \
   clickhouse/clickhouse-server:latest
 ```
 
+## Chay script run_dev_prod.sh
+Script nay tu dong:
+- Dat `DBT_PROFILES_DIR` ve thu muc hien tai.
+- Nap bien moi truong tu `.env` (vd: `CLICKHOUSE_PASSWORD`).
+- Chay dbt theo thu tu: `seed`, `run`, `test --store-failures`, `snapshot` cho `dev`.
+- Hoi xac nhan de chay tiep `prod` neu test `dev` pass.
+
+Chay:
+```
+./run_dev_prod.sh
+```
+
 ## Data
 Du lieu la sample, free to use, gom khach hang, don hang, thanh toan. Duoc tao tu seed CSV trong thu muc seeds/.
 
