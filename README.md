@@ -36,6 +36,18 @@ dbt test --target prod
 dbt snapshot --target prod
 ```
 
+## Chay ClickHouse (Docker)
+Khoi dong ClickHouse container va mount thu muc `users.d` de custom user/password:
+
+```
+docker run -d \
+  --name clickhouse \
+  -p 8123:8123 \
+  -p 9000:9000 \
+  -v $(pwd)/users.d:/etc/clickhouse-server/users.d \
+  clickhouse/clickhouse-server:latest
+```
+
 ## Data
 Du lieu la sample, free to use, gom khach hang, don hang, thanh toan. Duoc tao tu seed CSV trong thu muc seeds/.
 
